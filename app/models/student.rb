@@ -1,4 +1,5 @@
 class Student < ActiveRecord::Base
+    belongs_to :bus
     belongs_to :grade_level
     has_many :teachers, through: :grade_level
 
@@ -11,5 +12,4 @@ class Student < ActiveRecord::Base
             student.grade_level ==  grade_level
         end
     end
-
 end
