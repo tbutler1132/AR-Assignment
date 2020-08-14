@@ -10,12 +10,11 @@ For the student class, you need to create the Student.all_in_grade method as wel
 
 Part III:
 
--Destroy teacher_id in the students table and add grade_level_id
--Add grade_level_id to teachers table
--Add a grade_levels table that takes a string of a grade level
+-Destroy teacher_id in the students table 
+-Add a grade_levels table that takes a string of a grade level, student_id as an integer and teacher_id as an integer
 -Add macros:
-    -GradeLevel: has_many :teachers 
-                 has_many :students
+    -GradeLevel: belongs_to :teacher 
+                 belongs_to :student
     -Teacher: belongs_to :grade_level
               has_many :students, through: :grade_level
     -Student: belongs_to :grade_level

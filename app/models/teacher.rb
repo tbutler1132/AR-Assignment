@@ -1,6 +1,6 @@
 class Teacher < ActiveRecord::Base
-    belongs_to :grade_level
-    has_many :students, through: :grade_level
+    has_many :grade_levels
+    has_many :students, through: :grade_levels
 
     def tenure
         self.years_of_experience > 5 

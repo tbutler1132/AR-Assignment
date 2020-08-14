@@ -1,7 +1,8 @@
 class Student < ActiveRecord::Base
     belongs_to :bus
-    belongs_to :grade_level
-    has_many :teachers, through: :grade_level
+    has_many :bus_drivers, through: :bus
+    has_many :grade_levels
+    has_many :teachers, through: :grade_levels
 
     def full_name
         self.first_name + " " + self.last_name
