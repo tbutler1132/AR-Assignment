@@ -1,3 +1,6 @@
+Tim Butler
+
+
 # AR-Environment-Skeleton
 
 You can use this repo to build new Activerecord projects
