@@ -10,35 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_14_190914) do
+ActiveRecord::Schema.define(version: 2020_08_16_231807) do
 
-  create_table "bus_drivers", force: :cascade do |t|
-    t.string "first_name"
-    t.integer "age"
-    t.integer "bus_id"
-    t.string "frequency"
-    t.integer "grumpiness"
+  create_table "audio_files", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "user_id"
   end
 
-  create_table "buses", force: :cascade do |t|
-    t.integer "route_number"
+  create_table "polls", force: :cascade do |t|
+    t.string "title"
+    t.integer "audio_file_a_id"
+    t.integer "audio_file_b_id"
+    t.integer "creator_id"
   end
 
-  create_table "grade_levels", force: :cascade do |t|
-    t.string "grade_level"
-    t.integer "student_id"
-    t.integer "teacher_id"
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.integer "reputation"
   end
 
-  create_table "students", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.integer "bus_id"
-  end
-
-  create_table "teachers", force: :cascade do |t|
-    t.string "last_name"
-    t.integer "years_of_experience"
+  create_table "votes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "poll_id"
+    t.integer "answer"
   end
 
 end

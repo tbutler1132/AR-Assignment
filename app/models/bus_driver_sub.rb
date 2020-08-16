@@ -1,3 +1,0 @@
-class BusDriverSub < BusDriver 
-
-end
