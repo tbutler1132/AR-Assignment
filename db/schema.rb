@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_08_16_231807) do
   create_table "votes", force: :cascade do |t|
     t.integer "user_id"
     t.integer "poll_id"
-    t.integer "answer"
+    t.integer "answer"  #should prob be audio_file
   end
 
 end

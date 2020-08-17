@@ -35,6 +35,7 @@ steve.vote_on_poll(wolves_poll, 2)
 sam.vote_on_poll(wolves_poll, 2)
 kanye.vote_on_poll(reason_poll, 1)
 melo.vote_on_poll(reason_poll, 2)
+amare.vote_on_poll(reason_poll, 2)
 
 # User.last.create_poll("Wolves", first, second)
 

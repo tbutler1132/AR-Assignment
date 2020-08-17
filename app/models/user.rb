@@ -16,7 +16,25 @@ class User < ActiveRecord::Base
     end
 
     def vote_on_poll(chosen_poll, choice)
-            Vote.create(user_id: self.id, poll_id: chosen_poll.id, answer: choice)
+        self.reputation += 1
+        Vote.create(user_id: self.id, poll_id: chosen_poll.id, answer: choice)
     end
+
+    #iterate over User.all, checking how many polls in commmon each has with self.polls, returnning the max value
+    def best_friend
+        User.all.each do |user|
+           y = user.polls
+           x = self.polls
+           num = (x & y)
+           common = num.length
+        end.max
+    end
+
+    # def best_friend(user)
+    #     x = self.polls
+    #     y = user.polls
+    #     num = (x & y)
+    #     common = num.length
+    # end
 
 end

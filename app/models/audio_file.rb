@@ -3,5 +3,9 @@
 
 class AudioFile < ActiveRecord::Base
     belongs_to :user
+
+    def total_votes
+    end
+
    
 end
